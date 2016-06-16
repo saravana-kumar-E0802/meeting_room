@@ -1,0 +1,17 @@
+<% @page_title = "Delete Room" %>
+
+<%= link_to "<< Back to Rooms List", {:controller =>"rooms", :action => "index"}, :class => "back-link" %>
+
+<div class = "room delete">
+
+	<h2> Delete Room </h2>
+
+	<%= form_for(:room, :url=>{:action => "destroy", :id => @room}) do |f|%>
+		<p> Are you sure you want to permenently delete this Room ? </p>
+		<p> <%= @room.name%> </p>
+		<div class="form-buttons">
+			<%= submit_tag("Delete")%>
+		</div>
+	<%end%>
+
+</div>

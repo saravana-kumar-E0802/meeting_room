@@ -1,0 +1,16 @@
+<% @page_title = 'New Resource Addition' %>
+
+<%= link_to "<< Back to Resource List", {:controller =>'resources', :action=>'index'}, :class => 'back-link'%>
+
+<div class='resource new'>
+
+	<h2> Add New Resource </h2>
+
+	<%= form_for(:resource, :url => {:action => 'create'}, :html => {:multipart => true}) do |f|%>
+		<%= render :partial =>'form', :locals => {:f => f}%>
+		<div class='form-buttons'>
+			<%= submit_tag('Add new Resource') %>
+		</div>
+	<%end%>
+
+</div>

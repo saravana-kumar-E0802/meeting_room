@@ -1,0 +1,16 @@
+<% @page_title = 'Updating Resource to Room' %>
+
+<%= link_to "<< Back to Room Details", {:controller =>'room_resource', :action=>'index', :id => @room_resource.room_id}, :class => 'back-link'%>
+
+<div class='room_resource edit'>
+
+	<h2> Add New Resource </h2>
+
+	<%= form_for(:room_resource, :url => {:action => 'update', :id => @room_resource}, :html => {:multipart => true}) do |f|%>
+		<%= render :partial =>'form', :locals => {:f => f, :resource_array => @resource_array}%>
+		<div class='form-buttons'>
+			<%= submit_tag('Update') %>
+		</div>
+	<%end%>
+
+</div>

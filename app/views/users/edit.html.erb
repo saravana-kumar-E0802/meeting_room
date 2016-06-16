@@ -1,0 +1,19 @@
+<% @page_title = "Edit Users" %>
+
+<%= link_to "<<Back to User List", {:controller=>"users", :action => "index"}, :class=>"back-link"%>
+
+<div class="update user">
+
+	<h2> Edit User</h2>
+
+	<%= form_for(:user, :url=>{:action=>"update", :id=>@user}, :html=>{:multipart=>true}) do |f|%>
+
+		<%= render :partial=>"form", :locals=>{:f=>f}%>
+
+		<div class="form-buttons">
+			<%= submit_tag("Update")%>
+		</div>
+
+	<%end%>
+
+</div>

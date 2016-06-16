@@ -1,0 +1,14 @@
+<% @page_title = 'Edit Resource' %>
+
+<%= link_to '<< Back to Resource List', {:controller => 'resources', :action => 'index'}, :class => 'back-link'%>
+
+<div class='resource edit'>
+
+	<h2>Resource Modification</h2>
+
+	<%= form_for(:resource, :url => {:action => 'update', :id=>@resource}, :html => {:multipart => true}) do |f|%>
+		<%= render :partial =>'form', :locals => {:f =>f}%>
+		<%= submit_tag('Update') %>
+	<%end%>
+
+</div>

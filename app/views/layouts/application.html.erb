@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeting Room Booking</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="header">
+	<p id="logout"> <%= link_to "Log Out", {:controller=>"access", :action=>"logout"} %> </p>
+</div>
+
+<%= yield %>
+
+<div id="footer">
+	<p id="copyright">&copy;  saravana@freshdesk.com </p>
+</div>
+
+</body>
+</html>

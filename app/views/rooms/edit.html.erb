@@ -1,0 +1,19 @@
+<% @page_title = "Edit Rooms" %>
+
+<%= link_to "<< Back to Rooms list", {:controller => "rooms", :action=>"index"}, :class =>"back-link"%>
+
+<div class="room update">
+
+	<h2>Edit Room Details</h2>
+
+	<%= form_for(:room, :url=>{:action => "update", :id=>@room}, :html => {:multipart => true}) do |f|%>
+
+		<%= render :partial => "form", :locals => {:f=>f} %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Update")%>
+		</div>
+
+	<%end%>
+
+</div>

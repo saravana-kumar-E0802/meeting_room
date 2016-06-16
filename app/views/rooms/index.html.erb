@@ -1,0 +1,25 @@
+<% @page_title = "Rooms Index"%>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= link_to "<< Back to Menu", {:controller => "access", :action => "index"}, :calss => "back-link"%>
+
+<div>
+	<h2> Rooms List </h2>
+	<%= link_to "Add a New Meeting Room", {:controller => "rooms", :action => "new"}%>
+	<table>
+		<th>Name</th>
+		<th>Location</th>
+		<% @rooms.each do |room|%>
+			<tr>
+				<td><%= room.name%></td>
+				<td><%= room.location %> </td>
+				<td> <%= link_to 'Show', {:controller =>"room_resource", :action => 'index', :id => room.id} %> </td>
+				<td><%= link_to "Edit", {:controller => "rooms", :action => "edit", :id=>room.id}, :class => "action edit" %> </td>
+				<td><%= link_to "Delete", {:controller => "rooms", :action => "delete", :id => room.id}, :class => "action delete" %> </td>
+			</tr>
+		<%end%>
+	</table>
+</div>

@@ -1,0 +1,18 @@
+<% @page_title = "Admin Index"%>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<div>
+	<h2>Admin Index</h2>
+
+<ul>
+	<li><%= link_to "View Appointments", {:controller=>"appointments", :action=>"index"}%></li>
+	<li><%= link_to "View Rooms", {:controller=>"rooms", :action=>"index"}%></li>
+	<li><%= link_to "View Resources", {:controller=>"resources", :action=>"index"}%></li>
+	<li><%= link_to "Add Resources to Rooms", {:controller =>"rooms", :action=>"addresource"}%></li>
+	<li><%= link_to "View Users", {:controller=>"users", :action=>"index"}%></li>
+	<li><%= link_to "Log Out", {:controller=>"access", :action=>"logout"}%></li>
+</ul>
+</div>

@@ -1,0 +1,15 @@
+
+<% @page_title = 'Edit Appointment' %>
+
+<%= link_to '<< Back to Appointment List', {:controller => 'appointments', :action => 'index'}, :class => 'back-link'%>
+
+<div class='appointment edit'>
+
+	<h2>Appointment Modification</h2>
+
+	<%= form_for(:appointment, :url => {:action => 'update', :id=>@appointment}, :html => {:multipart => true}) do |f|%>
+		<%= render :partial =>'form', :locals => {:f =>f, :user => @user}%>
+		<%= submit_tag('Update') %>
+	<%end%>
+
+</div>

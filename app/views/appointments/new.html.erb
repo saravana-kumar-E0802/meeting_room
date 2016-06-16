@@ -1,0 +1,16 @@
+<% @page_title = 'New Appointment Booking' %>
+
+<%= link_to "<< Back to Appointment List", {:controller =>'Appointments', :action=>'index'}, :class => 'back-link'%>
+
+<div class='appointment new'>
+
+	<h2> Create New Appointment </h2>
+
+	<%= form_for(:appointment, :url => {:action => 'create'}, :html => {:multipart => true}) do |f|%>
+		<%= render :partial =>'form', :locals => {:f => f}%>
+		<div class='form-buttons'>
+			<%= submit_tag('Create new Appointment') %>
+		</div>
+	<%end%>
+
+</div>

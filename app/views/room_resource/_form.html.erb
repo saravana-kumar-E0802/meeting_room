@@ -1,0 +1,9 @@
+<%= error_messages_for(@room_resource)%>
+<p>
+	<%= f.label :resource%><br>
+	<%= f.select(:resource_id, options_for_select(@resource_array), {:multiple => false, :size => 3})%>
+</p>
+<p>
+	<%=f.label :count%>
+	<%= f.text_field :count%>
+</p>

@@ -1,0 +1,20 @@
+
+<% @page_title = "New User Addition"%>
+
+<%= link_to "<< Back to Users List", {:controller=>"users", :action => "index"}, :class=>"back-link"%>
+
+<div class="user new">
+
+	<h2> New User Creation</h2>
+
+	<%= form_for(:user, :url=>{:action=>"create"}, :html=>{:multipart=>true}) do |f|%>
+
+		<%= render :partial=>"form", :locals=>{:f=>f}%>
+
+		<div class="form-buttons">
+			<%= submit_tag("Create New User")%>
+		</div>
+
+	<%end%>
+
+</div>

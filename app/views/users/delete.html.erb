@@ -1,0 +1,14 @@
+<% @page_title = "User Delete"%>
+
+<%= link_to "<< Back to Users List", {:controller=>"users", :action=>"index"}, :class=>"back-link"%>
+
+<div>
+	<%= form_for(:user, :url=>{:action=>"destroy", :id=>@user}, :html=>{:multipart=>true}) do |f|%>
+		<p>Are you sure you want to delete the User</p>
+		<p><%= @user.to_s %></p>
+		<%= f.text_field_with_auto_complete :users, :first_name%>
+		<div>
+			<%= submit_tag("Delete")%>
+		</div>
+	<%end%>
+</div>

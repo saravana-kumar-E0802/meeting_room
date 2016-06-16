@@ -1,0 +1,29 @@
+<%= error_messages_for(@appointment)%>
+
+<div>
+	<table>
+		<tr>
+			<td><%= f.label :user_id %></td>
+			<td><%= f.text_field :user_id, :value=>@user.email%></td>
+
+		</tr>
+		<tr></tr>
+		<tr>
+			<td><%= f.label :room_id %></td>
+			<% room_array = Room.all.map{|room| [room.name, room.id]}%>
+			<td><%= f.select :room_id, options_for_select(room_array), {:multiple => false, :size => 5}%></td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td><%= f.label :start_time%></td>
+			<td><%= f.datetime_select(:start_time, :order => [:month, :day, :year])%></td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td><%= f.label :end_time%></td>
+			<td><%= f.datetime_select(:end_time,  :order => [:month, :day, :year])%></td>		
+		</tr>
+
+	</table>
+
+</div>

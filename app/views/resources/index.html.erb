@@ -1,0 +1,35 @@
+<% @page_title = "Resources List"%>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= link_to "<< Back to Menu", {:controller => 'access', :action => 'index'} %>
+
+<div class= "resource index">
+
+	<h2>Resources List</h2>
+
+	<%= link_to "Add New Resource", {:action => 'new'}, :class =>'action new' %>
+
+	<div><%= pluralize(@resources.size, "Resource") %> Found</div>
+
+	<table class="listing" summary="Resources list">
+
+		<th>Name</th>
+		<th>Configurations</th>
+		<th>IsMultiple</th>
+
+		<% @resources.each do |resource|%>
+			<tr>
+				<td> <%= resource.name%> </td>
+				<td> <%= resource.configurations %> </td>
+				<td> <%= resource.ismultiple %> </td>
+				<td> <%= link_to 'Edit', {:action => 'edit', :id => resource.id}, :class => 'action edit' %> </td>
+				<td> <%= link_to 'Delete', {:action => 'delete', :id => resource.id}, :class => 'action delete' %></td>
+			</tr>
+		<% end %>
+
+	</table>
+
+</div>

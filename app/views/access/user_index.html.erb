@@ -1,0 +1,14 @@
+<% @page_title = "User Index"%>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<div>
+<ul>
+	<h2>User Index</h2>
+	<li><%= link_to "View Appointments", {:controller=>"appointments", :action=>"index"}%></li>
+	<li><%= link_to "Create New Appointment", {:controller=>"appointments", :action=>"new"}%></li>
+	<li><%= link_to "Log Out", {:controller=>"access", :action=>"logout"}%></li>
+</ul>
+</div>

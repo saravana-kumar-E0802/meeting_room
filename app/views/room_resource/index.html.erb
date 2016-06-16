@@ -1,0 +1,42 @@
+<% @page_title = "Resources of Rooms"%>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
+<%= link_to "Back to Room List", {:controller => "rooms", :action => "index"}%>
+
+<div>
+	<h2> Room Details</h2>
+
+	<%= @room.name%> <br>
+	<p> Location: <%= @room.location%> </p>
+
+</div>
+
+<div>
+
+	<h3>Resources List</h3>
+
+	<%= link_to "Add Resources to Room", {:controller => "room_resource", :action => "new", :id => @room.id}%>
+
+	<table>
+
+		<th>Name</th>
+		<th>Configurations</th>
+		<th>count</th>
+
+		<% @resources.each do |resource|%>
+			<tr>
+				<td> <%= resource.resource.name%> </td>
+				<td> <%= resource.resource.configurations %> </td>
+				<td> <%= resource.count %> </td>
+				<td> <%= link_to "Edit", {:controller => "room_resource", :action =>"edit", :id => resource.id} %></td>
+				<td> <%= link_to "Delete", {:controller => "room_resource", :action =>"destroy", :id => resource.id} %></td>
+			</tr>
+		<% end %>
+
+	</table>
+
+</div>
